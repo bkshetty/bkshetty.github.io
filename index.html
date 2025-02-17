@@ -449,17 +449,7 @@ text-shadow:
     sections.forEach(section => observer.observe(section));
 
     // Theme toggle functionality
-    const toggleButton = document.getElementById('theme-toggle');
-    if (localStorage.getItem('theme') === 'dark') {
-      document.body.classList.add('dark');
-      toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
-    }
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark');
-      const isDark = document.body.classList.contains('dark');
-      toggleButton.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-      localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    });
+    
   </script>
 </body>
 </html>
