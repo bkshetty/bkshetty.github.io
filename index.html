@@ -6,34 +6,107 @@
   <title>Portfolio - Bhuvan Kumar Shetty</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css">
-  <!-- External JavaScript for Lightbox and Animations -->
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+  <!-- Lightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/css/lightbox.min.css" rel="stylesheet" />
+  <!-- FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Custom animations */
-    .fade-in {
+    /* Custom animations and styles */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: .15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: orange; }
+    }
+
+    section {
       opacity: 0;
-      animation: fadeIn 2s forwards;
-    }
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-    .slide-up {
       transform: translateY(50px);
-      opacity: 0;
-      animation: slideUp 1.5s forwards;
+      transition: opacity 1s ease, transform 1s ease;
     }
-    @keyframes slideUp {
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .project-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    input, textarea {
+      transition: all 0.3s ease;
+    }
+
+    input:focus, textarea:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .skills-section::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: url('https://www.transparenttextures.com/patterns/wave.png');
+      animation: wave 10s linear infinite;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
-<body class="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 text-gray-900">
+<body class="text-gray-900">
 
   <!-- Navbar -->
   <nav class="bg-gray-800 text-white fixed top-0 w-full z-10 shadow-lg">
@@ -50,11 +123,14 @@
     </div>
   </nav>
 
-  <!-- Landing Page Section with Background Image -->
-  <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-white" style="background-image: url('https://github.com/ab007shetty/ab007shetty.github.io/blob/master/assets/images/page-bg.jpg?raw=true');">
-    <h1 class="text-6xl font-bold animate-bounce">Welcome to My Portfolio</h1>
-    <p class="mt-4 text-2xl fade-in">I am a information science Engineer</p>
-    <a href="#about" class="bg-white text-gray-900 py-2 px-6 rounded-lg text-lg font-semibold hover:bg-gray-200 fade-in mt-4">Learn More</a>
+  <!-- Landing Page Section with Parallax Effect -->
+  <section class="h-screen bg-cover bg-center flex flex-col justify-center items-center text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
+    <div class="relative z-10">
+      <h1 class="text-6xl font-bold animate-bounce typewriter">Welcome to My Portfolio</h1>
+      <p class="mt-4 text-2xl fade-in">I am an Information Science Engineer</p>
+      <a href="#about" class="bg-white text-gray-900 py-2 px-6 rounded-lg text-lg font-semibold hover:bg-gray-200 fade-in mt-4">Learn More</a>
+    </div>
   </section>
 
   <!-- About Me Section -->
@@ -63,7 +139,7 @@
       <h2 class="text-4xl font-bold mb-8">About Me</h2>
       <p class="text-xl">I'm passionate about technology and coding. I am pursuing ISE engineering at NMAMIT Nitte. My areas of interest include Full Stack Web Development, Android, etc.</p>
       <br>
-	  <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-4">Connect with me</a>
+      <a href="#contact" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded mt-4">Connect with me</a>
     </div>
     <div class="w-1/4">
       <img src="https://avatars.githubusercontent.com/u/97822351?s=400&u=74d1220beaafe113e371805f3334c2039da0be63&v=4" alt="Bhuvan Kumar Shetty" class="rounded-full shadow-lg slide-up">
@@ -71,27 +147,23 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills(still learning)" class="py-20 bg-gray-200 text-center">
+  <section id="skills" class="py-20 bg-gray-200 text-center relative skills-section">
     <h2 class="text-4xl font-bold mb-8">Skills</h2>
     <div class="flex flex-wrap justify-center gap-6">
-      <!-- Skill Button -->
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">html</button>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">c++</button>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">c</button>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">video editing</button>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">photo editing</button>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400 animate__animated animate__fadeIn">SQL</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">HTML</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">C++</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">C</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">Video Editing</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">Photo Editing</button>
+      <button class="bg-blue-500 text-white py-2 px-4 rounded-lg shadow-lg transform transition hover:scale-105 hover:bg-blue-400">SQL</button>
     </div>
   </section>
 
-
-  <!-- Qualifications Section with Horizontal Layout and Hyphens -->
+  <!-- Qualifications Section -->
   <section id="qualifications" class="py-20 bg-gray-100 text-center">
     <h2 class="text-4xl font-bold mb-8">Qualifications</h2>
     <div class="relative flex items-center justify-center">
       <div class="flex items-center space-x-8 relative">
-
-        <!-- Milestone Item -->
         <div class="flex flex-col items-center relative z-10">
           <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">1</div>
           <div class="mt-4 p-4 bg-white rounded-lg shadow-lg">
@@ -100,13 +172,9 @@
             <p>Percentage: 89%</p>
           </div>
         </div>
-
-        <!-- Hyphen Connector -->
         <div class="absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-transparent z-0">
           <span class="inline-block w-full h-full border-t-2 border-green-600"></span>
         </div>
-
-        <!-- Milestone Item -->
         <div class="flex flex-col items-center relative z-10">
           <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">2</div>
           <div class="mt-4 p-4 bg-white rounded-lg shadow-lg">
@@ -115,13 +183,9 @@
             <p>Percentage: 94%</p>
           </div>
         </div>
-
-        <!-- Hyphen Connector -->
         <div class="absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-transparent z-0">
           <span class="inline-block w-full h-full border-t-2 border-green-600"></span>
         </div>
-
-        <!-- Milestone Item -->
         <div class="flex flex-col items-center relative z-10">
           <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">3</div>
           <div class="mt-4 p-4 bg-white rounded-lg shadow-lg">
@@ -129,31 +193,29 @@
             <p>NMAMIT Nitte, ISE Engineering</p>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- Projects Section with Cards -->
+  <!-- Projects Section -->
   <section id="projects" class="py-20 bg-white text-center">
     <h2 class="text-4xl font-bold mb-8">Projects</h2>
     <div class="flex justify-center space-x-8">
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 animate-pulse">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 project-card">
         <img src="https://via.placeholder.com/150" alt="Project 1" class="rounded-lg mb-4">
         <h3 class="text-xl font-bold">Project 1</h3>
         <p>Web Application</p>
         <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-4 block">View Code</a>
         <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-900 py-2 px-4 rounded mt-2 block">Live Demo</a>
       </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 animate-pulse">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 project-card">
         <img src="https://via.placeholder.com/150" alt="Project 2" class="rounded-lg mb-4">
         <h3 class="text-xl font-bold">Project 2</h3>
         <p>Machine Learning Model</p>
         <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded mt-4 block">View Code</a>
         <a href="#" class="bg-gray-200 hover:bg-gray-300 text-gray-900 py-2 px-4 rounded mt-2 block">Live Demo</a>
       </div>
-      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 animate-pulse">
+      <div class="bg-gray-100 p-6 rounded-lg shadow-lg w-60 project-card">
         <img src="https://via.placeholder.com/150" alt="Project 3" class="rounded-lg mb-4">
         <h3 class="text-xl font-bold">Project 3</h3>
         <p>Mobile App</p>
@@ -163,7 +225,7 @@
     </div>
   </section>
 
-   <!-- Certificates Section with Lightbox -->
+  <!-- Certificates Section -->
   <section id="certificates" class="py-20 bg-gray-100 text-center">
     <h2 class="text-4xl font-bold mb-8">Certificates</h2>
     <div class="flex justify-center space-x-8">
@@ -182,7 +244,7 @@
     </div>
   </section>
 
-  <!-- Contact Us Section with Form -->
+  <!-- Contact Section -->
   <section id="contact" class="py-20 bg-white text-center">
     <h2 class="text-4xl font-bold mb-8">Contact Me</h2>
     <form class="max-w-lg mx-auto">
@@ -199,18 +261,35 @@
     </form>
   </section>
 
-  <!-- Footer with Social Media Icons -->
+  <!-- Footer -->
   <footer class="bg-gray-800 text-white py-6 text-center">
     <div class="flex justify-center space-x-6 mt-4">
       <a href="https://www.linkedin.com/in/bk11shetty" class="text-xl hover:text-blue-400"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      <a href="https://github.com/bkshetty/" class="text-xl hover:text-blue-400"><i class="fab fa-github"></i> GitHub</a>
-      <a href="https://x.com/bk11shetty/" class="text-xl hover:text-blue-400"><i class="fab fa-twitter"></i> Twitter</a>
+      <a href="https://bkshetty.github.io/" class="text-xl hover:text-blue-400"><i class="fab fa-github"></i> GitHub</a>
+      <a href="https://twitter.com/" class="text-xl hover:text-blue-400"><i class="fab fa-twitter"></i> Twitter</a>
     </div>
     <p class="mt-6">&copy; 2024 Bhuvan Kumar Shetty</p>
   </footer>
 
-  <!-- FontAwesome for Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- Lightbox JS -->
+  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2.11.3/dist/js/lightbox.min.js"></script>
+  <!-- Scroll Animation JS -->
+  <script>
+    const sections = document.querySelectorAll('section');
 
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
 </html>
