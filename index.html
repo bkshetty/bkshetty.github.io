@@ -311,6 +311,14 @@ text-shadow:
 .blur-image:hover {
   filter: blur(0px); /* Removes blur on hover */
 }
+.image-hover-effect {
+    filter: grayscale(100%); /* Make image black & white */
+    transition: filter 0.5s ease-in-out; /* Smooth transition */
+}
+
+.image-hover-effect:hover {
+    filter: grayscale(0%); /* Restore original colors */
+}
 
 
 
@@ -362,7 +370,7 @@ text-shadow:
     <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
      <img src="https://avatars.githubusercontent.com/u/97822351?s=400&u=f9dd6e10853e14deffe42c602339102a56cf0e53&v=4" 
      alt="Bhuvan Kumar Shetty" 
-     class="rounded-full w-64 h-64 object-cover shadow-[0_0_25px_rgba(255,255,255,0.8)] w-64 h-64 object-cover transition-transform duration-300 hover:scale-110" >
+     class="rounded-full w-64 h-64 object-cover shadow-[0_0_25px_rgba(255,255,255,0.8)] w-64 h-64 object-cover transition-transform duration-300 hover:scale-110 image-hover-effect" >
 
     </div>
 
@@ -375,26 +383,26 @@ text-shadow:
   <section id="skills">
     <div>
       <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Skills</h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 260px;" "max-w-sm mx-auto">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Android_Studio_Logo_2024.svg"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
-          <p class="hover:text-blue-900 hover:bg-blue-200 font-bold" >Android studio</p>
+      <div style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 2rem;">
+		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
+          <img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/android-studio-icon.png "  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
+          <p class="hover:text-blue-900 font-bold" >Android studio</p>
 		</div>
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 260px;" "max-w-sm mx-auto">
+		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
-          <p class="hover:text-blue-900 hover:bg-blue-200 font-bold" >kotlin</p>
+          <p class="hover:text-blue-900 font-bold" >Kotlin</p>
         </div>
-        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 260px;" "max-w-sm mx-auto">
+        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
-          <p class="hover:text-blue-900 hover:bg-blue-200 font-bold" >python</p>
+          <p class="hover:text-blue-900 font-bold" >Python</p>
         </div>
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 260px;" "max-w-sm mx-auto"> 
+		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto"> 
           <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
-          <p class="hover:text-blue-900 hover:bg-blue-200 font-bold" >c</p>
+          <p class="hover:text-blue-900 font-bold" >C</p>
         </div>
-        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 260px;" "max-w-sm mx-auto">
+        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://freelogopng.com/images/all_img/1656734305canva-app-icon.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
-          <p class="hover:text-blue-900 hover:bg-blue-200 font-bold" >canva</p>
+          <p class="hover:text-blue-900 font-bold" >canva</p>
         </div>
       </div>
     </div>
