@@ -59,7 +59,7 @@
     }
     nav .logo {
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: bold;
       color: #ffffff;
     }
     nav .menu {
@@ -75,7 +75,11 @@
       transition: color 0.3s ease;
     }
     nav .menu a:hover {
-      color: var(--accent-color);
+	font-weight: bold;
+      background: rgb(63,94,251);
+background: linear-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
 
     /* Theme Toggle Button */
@@ -384,55 +388,147 @@ text-shadow:
     <div>
       <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Skills</h2>
       <div style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 2rem;">
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
+		<div class="cardss" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Android_Studio_Logo_2024.svg"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >Android studio</p>
 		</div>
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
+		<div class="cardss" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Kotlin_Icon.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >Kotlin</p>
         </div>
-        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
+        <div class="cardss" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >Python</p>
         </div>
-		<div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto"> 
+		<div class="cardss" style="width: 250px;" "max-w-sm mx-auto"> 
           <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >C</p>
         </div>
-        <div class="card bg-gray-700 text-white p-6 rounded-lg shadow-lg transition duration-300 transform hover:scale-105 hover:bg-blue-200" style="width: 250px;" "max-w-sm mx-auto">
+        <div class="cardss" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://freelogopng.com/images/all_img/1656734305canva-app-icon.png"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >canva</p>
         </div>
       </div>
     </div>
   </section>
+  <style>
+    .cardss{
+    background: linear-gradient(135deg, #2c003e, #240090, #001f4d, #003e3e);
+    color: white; /* Equivalent to text-white */
+    padding: 1.5rem; /* Equivalent to p-6 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease; /* Equivalent to transition duration-300 */
+}
+
+.cardss:hover {
+    transform: scale(1.05); /* Equivalent to hover:scale-105 */
+    background: linear-gradient(135deg, #4b0082, #3a00d9, #002d66, #005757);
+
+
+
+
+
+}
+</style>
 
   <!-- Qualifications Section -->
-  <section id="qualifications">
-    <div style="max-width: 900px;">
-      <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Qualifications</h2>
-      <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem;">
-        <div class="card" style="width: 280px;">
-          <div style="font-size: 1.8rem; font-weight: bold; background: var(--accent-color); color: var(--background-color); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto;">1</div>
-          <h3 style="margin-top: 1rem;">High School</h3>
-          <p>SSRS Hattiangadi School</p>
-          <p>Percentage: 89%</p>
-        </div>
-        <div class="card" style="width: 280px;">
-          <div style="font-size: 1.8rem; font-weight: bold; background: var(--accent-color); color: var(--background-color); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto;">2</div>
-          <h3 style="margin-top: 1rem;">Pre-University</h3>
-          <p>Excellent PU College</p>
-          <p>Percentage: 94%</p>
-        </div>
-        <div class="card" style="width: 280px;">
-          <div style="font-size: 1.8rem; font-weight: bold; background: var(--accent-color); color: var(--background-color); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto;">3</div>
-          <h3 style="margin-top: 1rem;">Engineering</h3>
-          <p>NMAMIT Nitte, ISE Engineering</p>
-        </div>
+<section id="qualifications">
+  <div style="max-width: 900px;">
+    <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Qualifications</h2>
+    <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem;">
+      
+      <!-- High School Card -->
+      <div class="cardq">
+        <div class="circle">1</div>
+        <h3>High School</h3>
+        <p>SSRS Hattiangadi</p>
+        <div class="popup">Done 10th in 2021-22 from ICSE board Examinations with 89% as Grade</div>
       </div>
+
+      <!-- Pre-University Card -->
+      <div class="cardq">
+        <div class="circle">2</div>
+        <h3>Pre-University</h3>
+        <p>Excellent PU College</p>
+        <div class="popup">Done 12th in 2023-24 from Karanataka State broad with 94% as Grade</div>
+      </div>
+
+      <!-- Engineering Card -->
+      <div class="cardq">
+        <div class="circle">3</div>
+        <h3>Engineering</h3>
+        <p>NMAMIT Nitte</p>
+        <div class="popup">Currently pursuing Information Science & Engineering with a focus on Web & Android development</div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+<style>
+  /* General Card Styles */
+  .cardq {
+    width: 280px;
+    position: relative;
+    text-align: center;
+    padding: 1.5rem;
+	
+	font-bold;
+	font-weight: bold;
+    background: linear-gradient(135deg, rgba(60,0,87,1) 0%, rgba(9,9,121,0.6666316184676996) 88%, rgba(10,71,84,1) 100%);
+     box-shadow: 0 4px 15px rgba(255, 192, 203, 0.9);
+    transition: transform 0.3s ease, background 0.3s ease;
+    border-radius: 10px;
+  }
+
+  /* Hover Effect */
+  .cardq:hover {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6666316184676996) 100%, rgba(0,212,255,1) 100%);
+  }
+
+  /* Circle Number */
+  .circle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: white;
+    color: black;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 1rem;
+  }
+
+  /* Popup Style */
+  .popup {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 350px;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  }
+
+  /* Show Popup on Hover */
+  .cardq:hover .popup {
+    opacity: 1;
+    visibility: visible;
+  }
+</style>
+
 
   <!-- Projects Section -->
   <section id="projects">
