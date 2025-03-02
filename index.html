@@ -3,7 +3,7 @@
 <head>
   
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portfolio - Bhuvan Kumar Shetty</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="styles.css" />
@@ -387,7 +387,8 @@ text-shadow:
   <section id="skills">
     <div>
       <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Skills</h2>
-      <div style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 2rem;">
+      <div class="scroll-containers" style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 2rem;" >
+        <div class="scroll-contents">
 		<div class="cardss" style="width: 250px;" "max-w-sm mx-auto">
           <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Android_Studio_Logo_2024.svg"  style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;" />
           <p class="hover:text-blue-900 font-bold" >Android studio</p>
@@ -409,7 +410,8 @@ text-shadow:
           <p class="hover:text-blue-900 font-bold" >canva</p>
         </div>
       </div>
-    </div>
+     </div>
+	</div>
   </section>
   <style>
     .cardss{
@@ -424,12 +426,40 @@ text-shadow:
 .cardss:hover {
     transform: scale(1.05); /* Equivalent to hover:scale-105 */
     background: linear-gradient(135deg, #4b0082, #3a00d9, #002d66, #005757);
-
-
-
-
-
 }
+
+  /* Scroll Container */
+  .scroll-containers {
+      display: flex;
+      overflow: hidden;
+      width: 100%;
+  }
+
+  /* Scrolling Contents */
+  .scroll-contents {
+      display: flex;
+      gap: 2rem; /* Space between images */
+      animation: scrollAnimation 10s linear infinite;
+  }
+
+  /* Keyframe Animation */
+  @keyframes scrollAnimation {
+      from {
+          transform: translateX(100%);
+      }
+      to {
+          transform: translateX(-100%);
+      }
+  }
+
+  /* Responsive Image Styling */
+  .scroll-content img {
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+
 </style>
 
   <!-- Qualifications Section -->
@@ -485,7 +515,7 @@ text-shadow:
   /* Hover Effect */
   .cardq:hover {
     transform: scale(1.05);
-    background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6666316184676996) 100%, rgba(0,212,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,0.6666316184676996) 100%, rgba(0,212,255,1) 100%);
   }
 
   /* Circle Number */
