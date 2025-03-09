@@ -591,55 +591,71 @@ text-shadow:
   </section>
 
   <!-- Certificates Section -->
-  <section id="certificates" style="overflow: hidden; white-space: nowrap; position: relative;">
-    <div class="scroll-container">
-        <div class="scroll-content">
-            <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/55beebccb387c6d63a230615fa08c3572128e931/nbg/Screenshot%202025-02-18%20184409.png" alt="Internet of Things" width="550" a href="https://coursera.org/share/100d5b9fb50c3b4512b84f031281307a">
-            <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-18%20184349.png" alt="Technical Support Fundamentals" width="550">
-            <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-18%20184203.png" alt="Android Basics with Compose" width="550">
-            <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-24%20233802.png" alt="Great India Hackathon" width="550">
+  <section id="certificates">
+    <div style="max-width: 1100px; margin: auto;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">Certificates</h2>
+        <div style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 1rem;">
+
+            <div class="cardsc" style="width: 500px;">
+                <a href="https://coursera.org/share/100d5b9fb50c3b4512b84f031281307a">
+                    <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/55beebccb387c6d63a230615fa08c3572128e931/nbg/Screenshot%202025-02-18%20184409.png" alt="Internet of Things" style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;">
+                    <h3>Internet of Things</h3>
+                </a>
+            </div>
+            <div class="cardsc" style="width: 500px;">
+                <a href="https://coursera.org/share/d456f312d2060257de70c4d0c2f73a1c">
+                    <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-18%20184349.png" alt="Technical Support Fundamentals" style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;">
+                    <h3>Technical Support Fundamentals</h3>
+                </a>
+            </div>
+            <div class="cardsc" style="width: 500px;">
+                <a href="https://drive.google.com/file/d/1lqu1NpW2hQHqKbo05eAB-VRAQC104ALL/view">
+                    <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-18%20184203.png" alt="Android Basics with Compose" style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;">
+                    <h3>Android Basics with Compose</h3>
+                </a>
+            </div>
+            <div class="cardsc" style="width: 500px;">
+                <a href="https://drive.google.com/file/d/1K8DJ1NoYbGSWxeiqG2rjQiTNZmINNDix/view">
+                    <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-02-24%20233802.png" alt="Great India Hackathon" style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;">
+                    <h3>Great India Hackathon</h3>
+                </a>
+            </div>
+			<div class="cardsc" style="width: 500px;">
+                <a href="https://drive.google.com/file/d/1kvQ1AAHQZa6A4UE8f0bkNuBRsIszmUJb/view">
+                    <img src="https://raw.githubusercontent.com/bkshetty/bkshetty.github.io/refs/heads/main/nbg/Screenshot%202025-03-09%20153040.png" alt="Great India Hackathon" style="border-radius: 8px; width: 100%; display: block; margin-bottom: 1rem;">
+                    <h3>Internship At Bitsky</h3>
+                </a>
+            </div>
         </div>
     </div>
 </section>
-
 <style>
-  /* Scroll Container */
-  .scroll-container {
-      display: flex;
-      overflow: hidden;
-      width: 100%;
-  }
-
-  /* Scrolling Content */
-  .scroll-content {
-      display: flex;
-      gap: 2rem; /* Space between images */
-      animation: scrollAnimation 10s linear infinite;
-  }
-
-  /* Keyframe Animation */
-  @keyframes scrollAnimation {
-      from {
-          transform: translateX(100%);
-      }
-      to {
-          transform: translateX(-100%);
-      }
-  }
-
   /* Responsive Image Styling */
-  .scroll-content img {
+  .certificates-content img {
       height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  .scroll-content img {
+  .certificates-content img {
     filter: blur(5px);
     transition: filter 0.3s ease-in-out;
 }
 
-.scroll-content img:hover {
+.certificates-content img:hover {
     filter: blur(0);
+}
+.cardsc{
+    background: linear-gradient(135deg, #2c003e, #240090, #001f4d, #003e3e);
+    color: white; /* Equivalent to text-white */
+    padding: 1rem; /* Equivalent to p-6 */
+    border-radius: 0.5rem; /* Equivalent to rounded-lg */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease; /* Equivalent to transition duration-300 */
+}
+
+.cardsc:hover {
+    transform: scale(1.20); /* Equivalent to hover:scale-105 */
+    background: linear-gradient(135deg, #4b0082, #3a00d9, #002d66, #005757);
 }
 
 </style>
